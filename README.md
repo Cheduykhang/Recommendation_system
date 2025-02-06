@@ -1,2 +1,2 @@
 # Recommendation_system
-Anime Recommendation System Using Machine Learning 
+Anime Recommendation App Using Machine Learning 
