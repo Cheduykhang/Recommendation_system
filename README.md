@@ -28,6 +28,6 @@ Input/Select a movie
 Press "Get Recommendation" to find similar movies
 ![Image](https://github.com/user-attachments/assets/2b8bfbc9-0f41-4fd3-bae4-2b0d9000e1e7)
 <br>
-Similar movies:
+Similar movies: <br>
 ![Image](https://github.com/user-attachments/assets/6a1c60c9-a6ff-41e4-a525-45bca6d93193)
 ![image](https://github.com/user-attachments/assets/5ff5722d-119f-4be9-b5bf-5f1c5f124d46)
