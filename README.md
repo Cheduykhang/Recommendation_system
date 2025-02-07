@@ -5,8 +5,8 @@ Streamlit:
    - Streamlit is an open-source framework for quickly creating interactive web applications for data science and machine learning projects. It enables the building of beautiful, customizable apps with minimal code using Python. Streamlit automatically updates the app when code is modified, making it ideal for prototypes, data visualizations, and machine learning models that can be shared easily.
    - Widgets like sliders, buttons, and text inputs can be added to control app behavior and visualize results instantly, without the need for complex frontend development skills.
 
-Using Jikan API: 
-Jikan API is a free API that allows you to fetch data from MyAnimeList (MAL), a popular platform for anime and manga enthusiasts. It provides an easy way to retrieve information about anime, manga, user profiles, watchlists, and more.
+Jikan API: 
+- Jikan API is a free API that allows you to fetch data from MyAnimeList (MAL), a popular platform for anime and manga enthusiasts. It provides an easy way to retrieve information about anime, manga, user profiles, watchlists, and more.
 
 
 # How to run system:
