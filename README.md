@@ -1,5 +1,5 @@
 # Recommendation_system
-Anime Recommendation App Using Machine Learning 
+Anime Recommendation App Using Machine Learning
 
 Used in system: <br>
 Streamlit: 
