@@ -38,22 +38,18 @@ features[['Score', 'Popularity', 'Members', 'Episodes', 'Favorites']] = scaler.f
 knn = NearestNeighbors(n_neighbors=10, algorithm='auto', metric='euclidean')
 knn.fit(features)
 
-# Hàm get_recommendations_with_details
 def get_recommendations_with_details(anime_name, n_recommendations=10):
     if anime_name not in anime_data['Name'].values:
         return f"Anime {anime_name} không có trong dữ liệu."
     
-    # Tìm chỉ số của phim
     anime_index = anime_data.index[anime_data['Name'] == anime_name].tolist()[0]
     
-    # Tìm các phim tương tự
+    # Find similar movies
     distances, indices = knn.kneighbors([features.iloc[anime_index]], n_neighbors=n_recommendations + 1)
     
-    # Loại bỏ phim gốc khỏi danh sách đề xuất
     similar_indices = indices[0][1:]
     similar_animes = anime_data.iloc[similar_indices]
     
-    # Tạo bảng kết quả chi tiết
     original_anime = anime_data.iloc[anime_index]
     
     def get_genres(row):
