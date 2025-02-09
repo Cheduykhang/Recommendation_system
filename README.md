@@ -1,6 +1,8 @@
 # Recommendation_system
 Anime Recommendation App Using Machine Learning
 
+Deploy: https://animerecommendationsystem-nayzx.streamlit.app/
+
 Used in system: <br>
 Streamlit: 
    - Streamlit is an open-source framework for quickly creating interactive web applications for data science and machine learning projects. It enables the building of beautiful, customizable apps with minimal code using Python. Streamlit automatically updates the app when code is modified, making it ideal for prototypes, data visualizations, and machine learning models that can be shared easily.
