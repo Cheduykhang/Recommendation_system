@@ -26,8 +26,6 @@ anime_data['Favorites'] = anime_data['Favorites'].fillna(anime_data['Favorites']
 anime_data['Genres'] = anime_data['Genres'].str.split(', ')
 mlb = MultiLabelBinarizer()
 genres_encoded = mlb.fit_transform(anime_data['Genres'])
-
-
 genres_df = pd.DataFrame(genres_encoded, columns=mlb.classes_, index=anime_data.index)
 anime_data = pd.concat([anime_data, genres_df], axis=1)
 features = anime_data[mlb.classes_.tolist() + ['Score', 'Popularity', 'Members', 'Episodes', 'Favorites']]
@@ -46,10 +44,8 @@ def get_recommendations_with_details(anime_name, n_recommendations=10):
     
     # Find similar movies
     distances, indices = knn.kneighbors([features.iloc[anime_index]], n_neighbors=n_recommendations + 1)
-    
     similar_indices = indices[0][1:]
     similar_animes = anime_data.iloc[similar_indices]
-    
     original_anime = anime_data.iloc[anime_index]
     
     def get_genres(row):
@@ -57,15 +53,13 @@ def get_recommendations_with_details(anime_name, n_recommendations=10):
     
     original_genres = get_genres(original_anime)
     similar_animes['Genres'] = similar_animes.apply(get_genres, axis=1)
-    
     details_df = pd.DataFrame(columns=['Name', 'Score', 'Popularity', 'Members', 'Episodes', 'Favorites', 'Genres'])
     
     for _, row in similar_animes.iterrows():
         details_df = pd.concat([details_df, pd.DataFrame([[row['Name'], row['Score'], row['Popularity'], row['Members'], row['Episodes'], row['Favorites'], ', '.join(row['Genres'])]], columns=['Name', 'Score', 'Popularity', 'Members', 'Episodes', 'Favorites', 'Genres'])])
-    
     details_df.reset_index(drop=True, inplace=True)
-    
     return details_df
+
 def get_anime_poster(anime_name):
     url = f"https://api.jikan.moe/v4/anime?q={anime_name}&sfw"
     response = requests.get(url)
