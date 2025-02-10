@@ -22,7 +22,7 @@ anime_data['Episodes'] = anime_data['Episodes'].fillna(anime_data['Episodes'].me
 
 anime_data['Favorites'] = pd.to_numeric(anime_data['Favorites'], errors='coerce')
 anime_data['Favorites'] = anime_data['Favorites'].fillna(anime_data['Favorites'].mean())
-# Xử lý cột Genres: Tách các thể loại và áp dụng One-Hot Encoding
+
 anime_data['Genres'] = anime_data['Genres'].str.split(', ')
 mlb = MultiLabelBinarizer()
 genres_encoded = mlb.fit_transform(anime_data['Genres'])
